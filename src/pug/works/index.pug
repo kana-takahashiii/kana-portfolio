@@ -1,0 +1,40 @@
+//- header
+include ../components/_header.pug
+
+
+//-Fruits Gelateriaのpug
+//- main
+main.works
+    .w-tg1
+        h3 DETAILS OF<br>Fruits Gelateria
+
+    .mock-wrap.w-tg2
+        img(src="../img/worksimg/gm-mock.png", alt="")
+        .w-tg3
+            .mock.job
+                p MY JOB
+                p デザイン・コーディング
+            .mock.dt
+                p DETAIL
+                p  架空のジェラートショップをデザインからコーディングまで行いました。一番こだわったところは○○○です。<br>SNS映え・学生〜20代前半をターゲット層に絞り、全体的に可愛らしい雰囲気で仕上げました。
+            .mock.link
+                p URL
+                a(href="fruitsgelateria.netlify.app") Fruits Gelateria
+        .bg-br-mock
+    
+    .mock-img-wrap.w-tg4
+        //- img.size(src="../img/header.png", alt="")
+        img(src="../img/worksimg/gm-mock-2.png", alt="")
+        img(src="../img/worksimg/gm-mock-2.png", alt="")
+        img(src="../img/worksimg/gm-mock-3.png", alt="")
+
+    //- btn
+    .btn
+        a(href="/index.html")
+            span.btn-text BACK
+            include ../components/_btn-arrow.pug
+
+
+//- footer
+include ../components/_footer.pug
+

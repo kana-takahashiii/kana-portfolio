@@ -1,0 +1,56 @@
+doctype
+html(lang='ja')
+  // head
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    title KANA TAKAHASHI
+    link(rel="stylesheet", href="/css/style.css")
+    //- swipe,css
+    //- link(rel="stylesheet",href="dist/css/swiper.css")
+    script(src="https://unpkg.com/swiper@8/swiper-bundle.min.js")
+    link(rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css")
+
+  body
+    //- --------------------------
+    //-PC nav
+    //---------------------------
+    nav.header-nav-pc
+      ul
+        li
+          a(href="/#works") WORKS
+          //- a(href="/works/") WORKS
+        li
+          a(href="/#about") ABOUT
+          //- a(href="/about/") ABOUT
+        li
+          a(href="/#contact") CONTACT
+    //- --------------------------
+    //-
+    //---------------------------
+
+
+    //- --------------------------
+    //-TAB,SP nav
+    //---------------------------
+    #navArea
+      nav.header-nav
+        ul
+          li
+            a(href="/#works") WORKS
+          li
+            a(href="/#about") ABOUT
+          li
+            a(href="/#contact") CONTACT
+      //- バーガーメニュー三本線部分
+      .toggle_btn
+        span
+        span 
+        span
+
+      //- マスク
+      #mask
+
+    //- custom-cursor
+    .cursor
+    .follower

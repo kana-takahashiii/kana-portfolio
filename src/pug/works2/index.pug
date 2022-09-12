@@ -1,0 +1,37 @@
+//- header
+include ../components/_header.pug
+
+//-インボイスのpug
+//- main
+main.works
+    .w-tg1
+        h3 DETAILS OF<br>INVOICE 
+    .mock-wrap.w-tg2
+        img(src="../img/worksimg/iv-mock.png", alt="")
+        .w-tg3
+            .mock.job
+                p MY JOB
+                p デザイン・コーディング
+            .mock.dt
+                p DETAIL
+                p  架空のコーポレートサイトをデザインからコーディングまで行いました。クライアントとのやりとりをある程度想像し、<br>清潔感のあるカラーや可読性の高いフォントに気をつけました。
+            .mock.link
+                p URL
+                a(href="https://muuuuu.org/") INVOICE 
+        .bg-br-mock
+    .mock-img-wrap.w-tg4
+        //- img.size(src="../img/header.png", alt="")
+        img(src="../img/worksimg/iv-mock2.png", alt="")
+        img(src="../img/worksimg/iv-mock3.png", alt="")
+        img(src="../img/worksimg/iv-mock4.png", alt="")
+
+    //- btn
+    .btn
+        a(href="/index.html")
+            span.btn-text BACK
+            include ../components/_btn-arrow.pug
+
+
+//- footer
+include ../components/_footer.pug
+
