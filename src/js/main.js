@@ -227,7 +227,16 @@ workstl.from(".w-tg1",{
         opacity:0,
         duration:3,
         y:"10%",
-        ease: Power4.easeInOut}, "<+=0.7");
+        ease: Power4.easeInOut,
+        scrollTrigger: {
+            trigger: '.js-trigger',//アニメーションが始まるトリガーとなる要素
+            start: 'top center', //アニメーションが始まる位置
+            end: 'bottom center', //アニメーションが終わる位置
+            markers: true,
+            scrub: true }
+    }, "<+=0.7");
+
+
 
 
 
