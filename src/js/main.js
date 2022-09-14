@@ -205,7 +205,7 @@ tl.from(".gp-demo",{
 // TOP>WORKS>timeline
 // -------------
 const workstl = gsap.timeline();
-workstl.from(".w-tg1",{
+workstl.from(".w-tg1",{ //works-title
         opacity:0,
         duration:3,
         y: "10%",
@@ -221,7 +221,8 @@ workstl.from(".w-tg1",{
             start: 'top center', //アニメーションが始まる位置
             end: 'bottom center', //アニメーションが終わる位置
             markers: true,
-            scrub: true }
+            scrub: 1
+        }
     }, "<+=0.5")
 
     .from(".w-tg3",{
@@ -229,11 +230,12 @@ workstl.from(".w-tg1",{
         duration:3,
         y:"100",
         ease: Power4.easeInOut,        scrollTrigger: {
-            trigger: '.js-trigger',//アニメーションが始まるトリガーとなる要素
-            start: 'top center', //アニメーションが始まる位置
-            end: 'bottom center', //アニメーションが終わる位置
+            trigger: '.js-trigger',
+            start: 'top center', 
+            end: 'bottom center', 
             markers: true,
-            scrub: true }
+            scrub: true
+        }
     }, "<+=0.6")
 
 
@@ -243,9 +245,9 @@ workstl.from(".w-tg1",{
         y:"10%",
         ease: Power4.easeInOut,
         scrollTrigger: {
-            trigger: '.js-trigger',//アニメーションが始まるトリガーとなる要素
-            start: 'top center', //アニメーションが始まる位置
-            end: 'bottom center', //アニメーションが終わる位置
+            trigger: '.js-trigger',
+            start: 'top center',
+            end: 'bottom center', 
             markers: true,
             scrub: true }
     }, "<+=0.7");
