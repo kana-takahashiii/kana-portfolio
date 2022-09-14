@@ -175,7 +175,7 @@ items.forEach((item) => {
 
 // -------------
 // ★gsap★
-// TOP>ABOUT>timeline
+// TOP>ABOUT詳細>timeline
 // -------------
 const tl = gsap.timeline();
 tl.from(".gp-demo",{
@@ -213,7 +213,7 @@ workstl.from(".w-tg1",{ //title
     
     .from(".w-tg2",{ //img
         opacity:0,
-        duration:3,
+        duration:5,
         y:"100",
         ease: Power4.easeInOut,
         scrollTrigger: {
@@ -226,7 +226,7 @@ workstl.from(".w-tg1",{ //title
     }, "<+=0.5")
 
     .from(".w-tg3",{ // text
-        opacity:0,
+        opacity:1,
         duration:3,
         y:"100",
         ease: Power4.easeInOut,
@@ -246,9 +246,9 @@ workstl.from(".w-tg1",{ //title
         ease: Power4.easeInOut,
         scrollTrigger: {
             trigger: '.w-tg4',
-            start: 'top center',
+            start: 'center bottom',
             end: 'bottom center', 
-            markers: true,
+            // markers: true,
         }
     }, "<+=0.7");
 
