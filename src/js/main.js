@@ -229,12 +229,12 @@ workstl.from(".w-tg1",{ //works-title
         opacity:0,
         duration:3,
         y:"100",
-        ease: Power4.easeInOut,        scrollTrigger: {
-            trigger: '.js-trigger',
+        ease: Power4.easeInOut,
+        scrollTrigger: {
+            trigger: '.w-tg3',
             start: 'top center', 
             end: 'bottom center', 
             markers: true,
-            scrub: true
         }
     }, "<+=0.6")
 
@@ -245,7 +245,7 @@ workstl.from(".w-tg1",{ //works-title
         y:"10%",
         ease: Power4.easeInOut,
         scrollTrigger: {
-            trigger: '.js-trigger',
+            trigger: '.w-tg4',
             start: 'top center',
             end: 'bottom center', 
             markers: true,
