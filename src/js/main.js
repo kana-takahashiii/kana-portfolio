@@ -87,9 +87,9 @@ hamburger();
 
 
 
-// -------------
+// -------------------
 // ALL_custom　cursor
-// -------------
+// -------------------
 function customCursor() {
     // window=デバイスの横幅
     var winW = window.outerWidth;
@@ -215,13 +215,27 @@ workstl.from(".w-tg1",{
         opacity:0,
         duration:3,
         y:"100",
-        ease: Power4.easeInOut}, "<+=0.5")
+        ease: Power4.easeInOut,
+        scrollTrigger: {
+            trigger: '.js-trigger',//アニメーションが始まるトリガーとなる要素
+            start: 'top center', //アニメーションが始まる位置
+            end: 'bottom center', //アニメーションが終わる位置
+            markers: true,
+            scrub: true }
+    }, "<+=0.5")
 
     .from(".w-tg3",{
         opacity:0,
         duration:3,
         y:"100",
-        ease: Power4.easeInOut}, "<+=0.6")
+        ease: Power4.easeInOut,        scrollTrigger: {
+            trigger: '.js-trigger',//アニメーションが始まるトリガーとなる要素
+            start: 'top center', //アニメーションが始まる位置
+            end: 'bottom center', //アニメーションが終わる位置
+            markers: true,
+            scrub: true }
+    }, "<+=0.6")
+
 
     .from(".w-tg4",{
         opacity:0,
