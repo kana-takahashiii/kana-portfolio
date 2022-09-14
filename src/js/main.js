@@ -103,6 +103,9 @@ function customCursor() {
         var cur = document.querySelector(".cursor");
         // querySelectorAll("a")　aタグすべて
         var links = document.querySelectorAll("a");
+        // querySelectorAll("img")　※top>about>swiperのみ
+        var links = document.querySelectorAll(".swiper-slide img");
+
 
         // カーソルの最初の位置指定
         gsap.set(follow, { xPercent: -50, yPercent: -50 });
@@ -115,18 +118,17 @@ function customCursor() {
             gsap.to(follow, { duration: 0.9, x: e.clientX, y: e.clientY });
         };
 
-        // aタグになるとカーソルが大きくなる、離れると小さくなるcssをActiveにする。
+        // aタグになるとカーソルが大きくなる、
         links.forEach(link => {
             link.addEventListener( "mouseenter", () => {
                 cur.classList.add("is-active");
                 follow.classList.add("is-active");
             });
-
+            // 離れると小さくなるcssをActiveにする。
             link.addEventListener( "mouseleave", () => {
                 cur.classList.remove("is-active");
                 follow.classList.remove("is-active");
-                }
-            );
+            });
         });
     }
 }
@@ -205,38 +207,41 @@ tl.from(".gp-demo",{
 // TOP>WORKS>timeline
 // -------------
 const workstl = gsap.timeline();
-workstl.from(".w-tg1",{ //title
+workstl.from(".w-tg1",
+    { //title
+    opacity:0,
+    duration:3,
+    y: "10%",
+    ease:  Power4.easeInOut
+    })
+    
+    .from(".w-tg2 img",
+    { //img
         opacity:0,
         duration:3,
-        y: "10%",
-        ease:  Power4.easeInOut,})
-    
-    .from(".w-tg2",{ //img
-        opacity:0,
-        duration:5,
         y:"100",
         ease: Power4.easeInOut,
         scrollTrigger: {
             trigger: '.w-tg2',//アニメーションが始まる要素
             start: 'top center', //アニメーションが始まる位置　//.w-tg2の上部が、画面(top)の中心(center)と交差したとき
             end: 'bottom center', //アニメーションが終わる位置
-            markers: true,
+            // markers: true,
             // scrub: 1 
         }
     }, "<+=0.5")
 
-    .from(".w-tg3",{ // text
+    .from(".w-tg2 p",{ // text
         opacity:1,
         duration:3,
         y:"100",
         ease: Power4.easeInOut,
         scrollTrigger: {
-            trigger: '.w-tg2',
-            start: 'bottom center ', 
+            trigger: '.w-tg2 p',
+            start: 'center center ', 
             end: 'bottom center', 
             markers: true,
         }
-    }, "<+=0.6")
+    }, "<+=0.8")
 
 
     .from(".w-tg4",{ //imgのみ
@@ -250,7 +255,7 @@ workstl.from(".w-tg1",{ //title
             end: 'bottom center', 
             // markers: true,
         }
-    }, "<+=0.7");
+    }, "<+=0.9");
 
 
 
