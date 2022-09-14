@@ -211,21 +211,21 @@ workstl.from(".w-tg1",{ //works-title
         y: "10%",
         ease:  Power4.easeInOut,})
     
-    .from(".w-tg2",{
+    .from(".w-tg2",{ //img
         opacity:0,
         duration:3,
         y:"100",
         ease: Power4.easeInOut,
         scrollTrigger: {
-            trigger: '.js-trigger',//アニメーションが始まるトリガーとなる要素
+            trigger: '.w-tg2',//アニメーションが始まるトリガーとなる要素
             start: 'top center', //アニメーションが始まる位置
             end: 'bottom center', //アニメーションが終わる位置
             markers: true,
-            scrub: 1
+            // scrub: 1
         }
     }, "<+=0.5")
 
-    .from(".w-tg3",{
+    .from(".w-tg3",{ // text
         opacity:0,
         duration:3,
         y:"100",
@@ -249,7 +249,7 @@ workstl.from(".w-tg1",{ //works-title
             start: 'top center',
             end: 'bottom center', 
             markers: true,
-            scrub: true }
+        }
     }, "<+=0.7");
 
 
