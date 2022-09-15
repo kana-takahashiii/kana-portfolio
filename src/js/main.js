@@ -248,7 +248,7 @@ gsap.from(".js-demo-img",{
     opacity: 0,
     y: -100,
     stagger: 0.3, //0.5秒遅れてそれぞれ再生
-    // ease: "Power4.easeOut",
+    ease: "Power4.easeOut",
     duration: 2,
     scrollTrigger: {
         markers: true,
