@@ -152,19 +152,11 @@ window.addEventListener('resize',function(){
 const items = gsap.utils.toArray('.js-trigger');
 items.forEach((item) => {
     gsap.fromTo(item,
-        {
-            y: 10,
-        },
-        {
-            y: 0,
-            // duration: 1.2,
-            duration: 2,
-            ease: 'power2.out',
-
+        {y: 10,},
+        {y: 0,duration: 2,ease: 'power2.out',
             scrollTrigger: {
                 trigger:  item,
                 start: 'top center',
-                // markers: true,
                 onEnter: () => item.classList.add('is-active'),
                 onLeaveBack: () => item.classList.remove('is-active'),
             }
@@ -184,19 +176,19 @@ tl.from(".gp-demo",{
         opacity:0,
         duration:3,
         y: "10%",
-        ease: Expo.easeOut})
+        ease: "Expo.easeOut"})
 
     .from(".gp-demo2",{
         opacity:0,
         duration: 3,
         y: "10%",
-        ease: Expo.easeOut}, "<+=0.2")
+        ease: "Expo.easeOut"}, "<+=0.2")
 
     .from(".gp-demo3",{
         opacity:0,
         duration:3,
         y:"10%",
-        ease: Expo.easeOut}, "<+=0.3");
+        ease: "Expo.easeOut"}, "<+=0.3");
 
 
 
@@ -206,56 +198,45 @@ tl.from(".gp-demo",{
 // ★gsap★
 // TOP>WORKS>timeline
 // -------------
-const workstl = gsap.timeline();
-workstl.from(".w-tg1",
-    { //title
-    opacity:0,
-    duration:3,
-    y: "10%",
-    ease:  Power4.easeInOut
-    })
-    
-    .from(".w-tg2 img",
-    { //img
-        opacity:0,
-        duration:3,
-        y:"100",
-        ease: Power4.easeInOut,
-        scrollTrigger: {
-            trigger: '.w-tg2',//アニメーションが始まる要素
-            start: 'top center', //アニメーションが始まる位置　//.w-tg2の上部が、画面(top)の中心(center)と交差したとき
-            end: 'bottom center', //アニメーションが終わる位置
-            // markers: true,
-            // scrub: 1 
-        }
-    }, "<+=0.5")
 
-    .from(".w-tg2 p",{ // text
-        opacity:1,
-        duration:3,
-        y:"100",
-        ease: Power4.easeInOut,
-        scrollTrigger: {
-            trigger: '.w-tg2 p',
-            start: 'center center ', 
-            end: 'bottom center', 
-            markers: true,
-        }
-    }, "<+=0.8")
+// gsap.from('.js__demo', {
+//     opacity:0,
+//     x: "10%",
+//     duration: 3,
+//     ease: "Power4.easeOut",
+//     // stagger: 20,
+//     scrollTrigger: {
+//         trigger: '.js__demo',
+//         start: 'top center',
+//         end: 'bottom center',
+//         markers: true,
+//     },
+//     stagger: {
+//     from: "start",
+//     amount: 1
+//     },
 
+// });
+// sample
 
-    .from(".w-tg4",{ //imgのみ
-        opacity:0,
-        duration:3,
-        y:"10%",
-        ease: Power4.easeInOut,
-        scrollTrigger: {
-            trigger: '.w-tg4',
-            start: 'center bottom',
-            end: 'bottom center', 
-            // markers: true,
+const animes = gsap.utils.toArray('.js__demo');
+animes.forEach((anime) => {
+    gsap.from(anime,
+        {
+            opacity: 0,
+            duration: 3,
+            x: "30%",
+            ease: "Power4.easeOut",
+            scrollTrigger: {
+                trigger:  item,
+                start: 'top center',
+                onEnter: () => item.classList.add('is-active'),
+                onLeaveBack: () => item.classList.remove('is-active'),
+            }
         }
-    }, "<+=0.9");
+        );
+});
+
 
 
 
