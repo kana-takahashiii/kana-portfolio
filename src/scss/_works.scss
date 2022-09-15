@@ -1,5 +1,9 @@
 // Fruits Gelateria
 .works {
+    &.is-active {
+        opacity: 1;
+    }
+
     .mock-wrap {
         aspect-ratio: 3/2;
         display: grid;

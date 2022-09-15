@@ -86,7 +86,6 @@ body {
     transition: opacity 0.5s linear;
         &.is-active {
             opacity: 1;
-            // transition: all 0.5s 2s ease;
         }
 }
 //消してみた
