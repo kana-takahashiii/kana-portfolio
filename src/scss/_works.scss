@@ -1,8 +1,5 @@
 // Fruits Gelateria
 .works {
-    &.is-active {
-        opacity: 1;
-    }
 
     .mock-wrap {
         aspect-ratio: 3/2;
@@ -33,7 +30,7 @@
             p:nth-of-type(2) {
                 font-family: 'Noto Sans JP', serif ,sans-serif;
             }
-        }
+        }   
         // URL部分
         .link {
             // padding-bottom: 80px;

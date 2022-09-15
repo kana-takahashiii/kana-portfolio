@@ -217,8 +217,9 @@ tl.from(".gp-demo",{
 //     },
 
 // });
-// sample
 
+
+// sample
 const animes = gsap.utils.toArray('.js__demo');
 animes.forEach((anime) => {
     gsap.from(anime,
@@ -228,10 +229,11 @@ animes.forEach((anime) => {
             x: "30%",
             ease: "Power4.easeOut",
             scrollTrigger: {
-                trigger:  item,
+                markers: true,
+                trigger:  anime,
                 start: 'top center',
-                onEnter: () => item.classList.add('is-active'),
-                onLeaveBack: () => item.classList.remove('is-active'),
+                onEnter: () => anime.classList.add('is-active'),
+                onLeaveBack: () => anime.classList.remove('is-active'),
             }
         }
         );
