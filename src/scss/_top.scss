@@ -153,7 +153,7 @@ body {
 
 
 // ---------------------
-// メイン
+// top
 // ---------------------
 .top {
     // kv
@@ -342,22 +342,12 @@ body {
     }
 
 
+
+    // --------------------
     // CONTACT
+    // ---------------------
     #contact.section-wrap{
         padding-bottom: 80px;
-        .parapara-jump {
-            // position: relative;
-            position: absolute;
-            // bottom: -13vw;
-            top: calc(100% + 14vw);
-            width: 80px;
-            height: 160px;
-            background: url(../img/parapara-jp.png) no-repeat;
-            background-size: cover;
-            animation: parapara-about 3.0s steps(2) infinite;
-        }
-    
-        
         .form a {
             font-size: clamp(2rem,7vw,8rem);
             color: var(--font-color);
@@ -381,6 +371,26 @@ body {
                 font-size: clamp( 2rem,4vw,3rem);
             }
 }
+
+    // footer-anime
+    // .parapara-flex {
+    //     display: flex;
+    //     position: absolute;
+    // .parapara-top {
+    //     width: 80px;
+    //     height: 120px;
+    //     background: url(../img/parapara.png) no-repeat;
+    //     animation: parapara-top 3.0s steps(2) infinite;
+    //     background-size: cover;
+    // }
+    // }
+    // .btn {
+    //     @include btn(26.5rem, 7.2rem);
+    //     btn-text {
+    //         padding: 0 60px;
+    //     }
+    // }
+    // code-end
 
 
 
@@ -435,10 +445,8 @@ body {
                 }
             }
         }
-    // #works,#about{
-    //     padding-top: 120px;
-    // }
-    .section-wrap {
+
+        .section-wrap {
         padding-top: 100px;
         h2 {
             text-align: center;
@@ -485,8 +493,8 @@ body {
             width: min(51vw,200px);
         }
     }
+    }
 }
 //-----------
 // SP-end
 // ----------
-}

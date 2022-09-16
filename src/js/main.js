@@ -73,7 +73,6 @@ function hamburger() {
     btn.addEventListener('click', function() {
         navArea.classList.toggle('open');
         btn.classList.toggle("active");
-        console.log('hage')
     });
 
     // マスク部分押したとき
@@ -92,9 +91,7 @@ hamburger();
 // -------------------
 function customCursor() {
     // window=デバイスの横幅
-    var winW = window.outerWidth;
-    // console.log(winW);
-    
+    var winW = window.outerWidth;    
     // PCかそれ以外かを区別するために数値設定
     var breakpoints = 1024;
     // もしデバイスの横幅が1024以上なら
@@ -149,6 +146,7 @@ window.addEventListener('resize',function(){
 const home = document.querySelector(".shutter"); //TOP
 const about = document.querySelector(".about"); //ABOUT
 const works = document.querySelector(".works"); //WORKS
+
 if(home) {
     // スムーススクロール記述　↓↓
     let smoothHomeAnchor =()=> {
@@ -186,78 +184,76 @@ if(home) {
         }
         );
     });
-    // gsap scrollTrigger記述　↓↓
+    // gsap scrollTrigger記述　↑↑
     
-    
 
 
+    } else if(about) {
 
-} else if(about) {
+        // gsap about ふわっと現れる記述　↓↓
+        const tl = gsap.timeline();
+        tl.from(".gp-demo",{
+                opacity:0,
+                duration:3,
+                y: "10%",
+                ease: "Expo.easeOut"})
 
-    // gsap about ふわっと現れる記述　↓↓
-    const tl = gsap.timeline();
-    tl.from(".gp-demo",{
-            opacity:0,
-            duration:3,
-            y: "10%",
-            ease: "Expo.easeOut"})
+            .from(".gp-demo2",{
+                opacity:0,
+                duration: 3,
+                y: "10%",
+                ease: "Expo.easeOut"}, "<+=0.2")
 
-        .from(".gp-demo2",{
-            opacity:0,
-            duration: 3,
-            y: "10%",
-            ease: "Expo.easeOut"}, "<+=0.2")
-
-        .from(".gp-demo3",{
-            opacity:0,
-            duration:3,
-            y:"10%",
-            ease: "Expo.easeOut"}, "<+=0.3");
-    // gsap about ふわっと現れる記述　↑↑
-          
-        
+            .from(".gp-demo3",{
+                opacity:0,
+                duration:3,
+                y:"10%",
+                ease: "Expo.easeOut"}, "<+=0.3");
+        // gsap about ふわっと現れる記述　↑↑
+            
+            
 
 
-} else if(works) {
-    // gsap works スクロール×ふわっと現れる記述　↓↓
-    const animes = gsap.utils.toArray('.js-demo');
-    animes.forEach((anime) => {
-        gsap.from(anime,
-            {
-                opacity: 0,
-                duration: 2,
-                y: "30%",
-                ease: "Power4.easeOut",
-                scrollTrigger: {
-                    markers: true,
-                    trigger:  anime,
-                    start: 'top center'
+    } else if(works) {
+        // gsap works スクロール×ふわっと現れる記述　↓↓
+        const animes = gsap.utils.toArray('.js-demo');
+        animes.forEach((anime) => {
+            gsap.from(anime,
+                {
+                    opacity: 0,
+                    duration: 2,
+                    y: "30%",
+                    ease: "Power4.easeOut",
+                    scrollTrigger: {
+                        // markers: true,
+                        trigger:  anime,
+                        start: 'top center'
+                    }
                 }
+                );
+            });
+        // gsap works スクロール×ふわっと現れる記述　↑↑
+
+
+        // gsap works img×スクロール×ふわっと現れる記述　↓↓
+        gsap.from(".js-demo-img",{
+            opacity: 0,
+            y: -100,
+            stagger: 0.3,
+            ease: "Power4.easeOut",
+            duration: 2,
+            scrollTrigger: {
+                // markers: true,
+                trigger:  ".js-demo-img",
+                start: 'top center'
             }
-            );
-        });
-    // gsap works スクロール×ふわっと現れる記述　↑↑
+        })
+        // gsap works img×スクロール×ふわっと現れる記述　↑↑
 
-
-    // gsap works img×スクロール×ふわっと現れる記述　↓↓
-    gsap.from(".js-demo-img",{
-        opacity: 0,
-        y: -100,
-        stagger: 0.3,
-        ease: "Power4.easeOut",
-        duration: 2,
-        scrollTrigger: {
-            markers: true,
-            trigger:  ".js-demo-img",
-            start: 'top center'
-        }
-    })
-    // gsap works img×スクロール×ふわっと現れる記述　↑↑
-
+};
 // -----------------------
 //ALL__条件分岐＿＿end
 // -----------------------
-};
 
 
 
