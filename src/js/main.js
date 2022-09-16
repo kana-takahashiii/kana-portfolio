@@ -150,7 +150,6 @@ const home = document.querySelector(".shutter"); //TOP
 const about = document.querySelector(".about"); //ABOUT
 const works = document.querySelector(".works"); //WORKS
 if(home) {
-
     // スムーススクロール記述　↓↓
     let smoothHomeAnchor =()=> {
         const anchorLinks = document.querySelectorAll('a[href^="/#"]');
@@ -170,26 +169,14 @@ if(home) {
     }
     // スムーススクロール記述 ↑↑
     smoothHomeAnchor();
+    
 
-} else if(about) {
-
-
-} else if(works) {
-
-
-};
-
-
-
-// -------------
-// ★gsap★
-// TOPページ
-// -------------
-const items = gsap.utils.toArray('.js-trigger');
-items.forEach((item) => {
-    gsap.fromTo(item,
-        {y: 10,},
-        {y: 0,duration: 2,ease: 'power2.out',
+    // gsap scrollTrigger記述　↓↓
+    const items = gsap.utils.toArray('.js-trigger');
+    items.forEach((item) => {
+        gsap.fromTo(item,
+            {y: 10,},
+            {y: 0,duration: 2,ease: 'power2.out',
             scrollTrigger: {
                 trigger:  item,
                 start: 'top center',
@@ -197,32 +184,130 @@ items.forEach((item) => {
                 onLeaveBack: () => item.classList.remove('is-active'),
             }
         }
-    );
-});
+        );
+    });
+    // gsap scrollTrigger記述　↓↓
+    
+    
+
+
+
+} else if(about) {
+
+    // gsap about ふわっと現れる記述　↓↓
+    const tl = gsap.timeline();
+    tl.from(".gp-demo",{
+            opacity:0,
+            duration:3,
+            y: "10%",
+            ease: "Expo.easeOut"})
+
+        .from(".gp-demo2",{
+            opacity:0,
+            duration: 3,
+            y: "10%",
+            ease: "Expo.easeOut"}, "<+=0.2")
+
+        .from(".gp-demo3",{
+            opacity:0,
+            duration:3,
+            y:"10%",
+            ease: "Expo.easeOut"}, "<+=0.3");
+    // gsap about ふわっと現れる記述　↑↑
+          
+        
+
+
+} else if(works) {
+    // gsap works スクロール×ふわっと現れる記述　↓↓
+    const animes = gsap.utils.toArray('.js-demo');
+    animes.forEach((anime) => {
+        gsap.from(anime,
+            {
+                opacity: 0,
+                duration: 2,
+                y: "30%",
+                ease: "Power4.easeOut",
+                scrollTrigger: {
+                    markers: true,
+                    trigger:  anime,
+                    start: 'top center'
+                }
+            }
+            );
+        });
+    // gsap works スクロール×ふわっと現れる記述　↑↑
+
+
+    // gsap works img×スクロール×ふわっと現れる記述　↓↓
+    gsap.from(".js-demo-img",{
+        opacity: 0,
+        y: -100,
+        stagger: 0.3,
+        ease: "Power4.easeOut",
+        duration: 2,
+        scrollTrigger: {
+            markers: true,
+            trigger:  ".js-demo-img",
+            start: 'top center'
+        }
+    })
+    // gsap works img×スクロール×ふわっと現れる記述　↑↑
+
+// -----------------------
+//ALL__条件分岐＿＿end
+// -----------------------
+};
+
+
+
+
+
+
+// -------------
+// ★gsap★
+// TOPページ
+// -------------
+// const items = gsap.utils.toArray('.js-trigger');
+// items.forEach((item) => {
+//     gsap.fromTo(item,
+//         {y: 10,},
+//         {y: 0,duration: 2,ease: 'power2.out',
+//             scrollTrigger: {
+//                 trigger:  item,
+//                 start: 'top center',
+//                 onEnter: () => item.classList.add('is-active'),
+//                 onLeaveBack: () => item.classList.remove('is-active'),
+//             }
+//         }
+//     );
+// });
+
+
 
 
 // -------------
 // ★gsap★
 // ABOUT詳細ページ
 // -------------
-const tl = gsap.timeline();
-tl.from(".gp-demo",{
-        opacity:0,
-        duration:3,
-        y: "10%",
-        ease: "Expo.easeOut"})
+// const tl = gsap.timeline();
+// tl.from(".gp-demo",{
+//         opacity:0,
+//         duration:3,
+//         y: "10%",
+//         ease: "Expo.easeOut"})
 
-    .from(".gp-demo2",{
-        opacity:0,
-        duration: 3,
-        y: "10%",
-        ease: "Expo.easeOut"}, "<+=0.2")
+//     .from(".gp-demo2",{
+//         opacity:0,
+//         duration: 3,
+//         y: "10%",
+//         ease: "Expo.easeOut"}, "<+=0.2")
 
-    .from(".gp-demo3",{
-        opacity:0,
-        duration:3,
-        y:"10%",
-        ease: "Expo.easeOut"}, "<+=0.3");
+//     .from(".gp-demo3",{
+//         opacity:0,
+//         duration:3,
+//         y:"10%",
+//         ease: "Expo.easeOut"}, "<+=0.3");
 
 
 
@@ -231,32 +316,32 @@ tl.from(".gp-demo",{
 // ★gsap★
 // WORKS詳細ページ
 // -------------
-const animes = gsap.utils.toArray('.js-demo');
-animes.forEach((anime) => {
-    gsap.from(anime,
-        {
-            opacity: 0,
-            duration: 2,
-            y: "30%",
-            ease: "Power4.easeOut",
-            scrollTrigger: {
-                markers: true,
-                trigger:  anime,
-                start: 'top center'
-            }
-        }
-        );
-});
+// const animes = gsap.utils.toArray('.js-demo');
+// animes.forEach((anime) => {
+//     gsap.from(anime,
+//         {
+//             opacity: 0,
+//             duration: 2,
+//             y: "30%",
+//             ease: "Power4.easeOut",
+//             scrollTrigger: {
+//                 markers: true,
+//                 trigger:  anime,
+//                 start: 'top center'
+//             }
+//         }
+//         );
+// });
 
-gsap.from(".js-demo-img",{
-    opacity: 0,
-    y: -100,
-    stagger: 0.3, //0.5秒遅れてそれぞれ再生
-    ease: "Power4.easeOut",
-    duration: 2,
-    scrollTrigger: {
-        markers: true,
-        trigger:  ".js-demo-img",
-        start: 'top center'
-    }
-})
+// gsap.from(".js-demo-img",{
+//     opacity: 0,
+//     y: -100,
+//     stagger: 0.3, //0.5秒遅れてそれぞれ再生
+//     ease: "Power4.easeOut",
+//     duration: 2,
+//     scrollTrigger: {
+//         markers: true,
+//         trigger:  ".js-demo-img",
+//         start: 'top center'
+//     }
+// })
