@@ -143,37 +143,41 @@ window.addEventListener('resize',function(){
 
 
 
-// -------------
-//TOP>all
-//スムーススクロール条件分岐
-// -------------
-const i = document.querySelectorAll("div");
-// let count = 1;
-for (let item of i) {
-    // もしshutterというclass名があったら
-    if (item.classList.contains("shutter")) {
-    // スムーススクロール記述↓
+// -----------------------
+//ALL__条件分岐
+// -----------------------
+const home = document.querySelector(".shutter"); //TOP
+const about = document.querySelector(".about"); //ABOUT
+const works = document.querySelector(".works"); //WORKS
+if(home) {
+
+    // スムーススクロール記述　↓↓
     let smoothHomeAnchor =()=> {
-    const anchorLinks = document.querySelectorAll('a[href^="/#"]');
-    const anchorLinksArr = Array.prototype.slice.call(anchorLinks);
-    anchorLinksArr.forEach(link => {
-        link.addEventListener('click', e => {
-            e.preventDefault();
-            const targetId = link.hash;
-            const targetElement = document.querySelector(targetId);
-            const targetOffsetTop = window.pageYOffset + targetElement.getBoundingClientRect().top;
-            window.scrollTo({
-                top: targetOffsetTop,
-                behavior: "smooth"
+        const anchorLinks = document.querySelectorAll('a[href^="/#"]');
+        const anchorLinksArr = Array.prototype.slice.call(anchorLinks);
+        anchorLinksArr.forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                const targetId = link.hash;
+                const targetElement = document.querySelector(targetId);
+                const targetOffsetTop = window.pageYOffset + targetElement.getBoundingClientRect().top;
+                window.scrollTo({
+                    top: targetOffsetTop,
+                    behavior: "smooth"
+                });
             });
         });
-    });
     }
-smoothHomeAnchor();
-    }
+    // スムーススクロール記述 ↑↑
+    smoothHomeAnchor();
+
+} else if(about) {
+
+
+} else if(works) {
+
+
 };
-
-
 
 
 
@@ -193,7 +197,7 @@ items.forEach((item) => {
                 onLeaveBack: () => item.classList.remove('is-active'),
             }
         }
-        );
+    );
 });
 
 
@@ -255,9 +259,4 @@ gsap.from(".js-demo-img",{
         trigger:  ".js-demo-img",
         start: 'top center'
     }
-});
-
-
-
-
-
+})

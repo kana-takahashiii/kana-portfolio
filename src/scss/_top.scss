@@ -345,6 +345,19 @@ body {
     // CONTACT
     #contact.section-wrap{
         padding-bottom: 80px;
+        .parapara-jump {
+            // position: relative;
+            position: absolute;
+            // bottom: -13vw;
+            top: calc(100% + 14vw);
+            width: 80px;
+            height: 160px;
+            background: url(../img/parapara-jp.png) no-repeat;
+            background-size: cover;
+            animation: parapara-about 3.0s steps(2) infinite;
+        }
+    
+        
         .form a {
             font-size: clamp(2rem,7vw,8rem);
             color: var(--font-color);
