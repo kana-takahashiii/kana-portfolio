@@ -163,11 +163,8 @@ body {
             align-items: center;
             display: flex;
             position: relative;
-            // height: calc(100vh - 100px );
-            // padding: 10vh 0;
             .kv-copy {
                 position: relative;
-                // position: absolute;
                 .kv-name {
                     font-size: clamp(4rem, 12vw, 14rem);
                     font-weight: 700;

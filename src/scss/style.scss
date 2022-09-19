@@ -44,6 +44,11 @@ body {
     letter-spacing: .05em;
     margin: 0 auto;
 
+    body{
+        font-size: var(--font-13-16);
+        font-family: var(--font-family);
+        color: var(--font-color);
+    }
     .top {
         padding-top: 0;
         width: var(--width);
@@ -58,13 +63,14 @@ body {
     .about {
         width: 80vw;
         margin: 0 auto;
-    }    
+    }
+
     h2{
         font-size: var(--h2);
-        //--h2___clamp(6rem, 16vw, 16rem);_ABOUT.WORKS.CONTACT
         font-weight: 700;
         line-height: 1;
     }
+
     h3 {
         //--h3___WORKS-site-title GM
         width: 80vw;
@@ -76,6 +82,9 @@ body {
     }
     .section-item {
         margin-top: 80px;
+    }
+    span {
+        font-weight: inherit;
     }
 }
 
