@@ -101,7 +101,7 @@ function customCursor() {
         // querySelectorAll("a")　aタグすべて
         var links = document.querySelectorAll("a");
         // querySelectorAll("img")　※top>about>swiperのみ
-        var links = document.querySelectorAll(".swiper-slide img");
+        // var links = document.querySelectorAll(".swiper-slide img");
 
 
         // カーソルの最初の位置指定

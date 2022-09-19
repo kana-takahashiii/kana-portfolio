@@ -157,15 +157,13 @@
 //    SP
 // ----------
 @include mq(sp) {
-    .about {padding-top: 120px;
+    .about {
+        padding-top: 120px;
         .about-wrap {
             display: flex;
             flex-direction: column;
             top: 10vw;
             grid-gap: 40px;
-            // margin: 40px 0 100px;
-            // margin-top: 40px;
-            // margin-bottom: 100px;
             margin: 40px 0 100px;
             .about-text {
                 margin-top: 40px;
@@ -193,6 +191,7 @@
         }
 
     }
+    // btn
     .footer-inner {
         width: var(--media-sp-width);
         padding-top: 0;

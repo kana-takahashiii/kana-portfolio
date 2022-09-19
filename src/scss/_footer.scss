@@ -6,16 +6,6 @@ footer {
     }
     padding: 200px 0 40px;
 
-    .parapara-jmp {
-        aspect-ratio: 12 / 7;  // 274 / 160
-        width: 91px;
-        height: 160px;
-        bottom: calc(97% - 10vh);
-        position: absolute;
-        background: url(../img/sample.png) no-repeat;
-        animation: parapara-jmp 3.0s steps(3) infinite;
-        background-size: cover;
-    } 
 }
 
 

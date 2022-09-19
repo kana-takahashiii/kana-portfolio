@@ -219,7 +219,7 @@ body {
                     }
                 }
             }
-            // プログレスバー高さ
+            // プログレスバー横幅
             .swiper-horizontal > .swiper-pagination-progressbar,
             .swiper-pagination-progressbar.swiper-pagination-horizontal {
                 width: 30%;
@@ -367,7 +367,20 @@ body {
                 margin-top: 80px;
                 font-size: clamp( 2rem,4vw,3rem);
             }
+            .parapara-jmp {
+                aspect-ratio: 12/7;
+                width: 91px;
+                height: 160px;
+                bottom: calc(97% - 10vh);
+                position: absolute;
+                background: url(../img/sample.png) no-repeat;
+                -webkit-animation: parapara-jmp 3s steps(3) infinite;
+                animation: parapara-jmp 3s steps(3) infinite;
+                background-size: cover;
+            }
 }
+
+            
 
     // footer-anime
     // .parapara-flex {
