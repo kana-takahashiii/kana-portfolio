@@ -230,7 +230,8 @@ body {
             }
             //プログレスバー背景色
             .swiper-pagination-progressbar {
-                background-color: var(--main-color);
+                // background-color: var(--main-color);
+                background-color: white;
                 position: absolute;
                 height: 1.5px;
                 
