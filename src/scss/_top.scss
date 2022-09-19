@@ -326,11 +326,9 @@ body {
                     animation-duration: 1s;
                     animation-delay: 1s;
                     animation-fill-mode: both;
+                    line-height: 1em;
+                    bottom: 10px;
                 }
-            }
-            .swiper-button-prev:after,
-            .swiper-button-next:after  {
-                color:var(--main-color);
             }
         }
         .btn {
