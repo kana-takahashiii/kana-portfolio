@@ -186,8 +186,6 @@ if(home) {
     });
     // gsap scrollTrigger記述　↑↑
     
-
-
     } else if(about) {
 
         // gsap about ふわっと現れる記述　↓↓
@@ -259,84 +257,55 @@ if(home) {
 
 
 
-// -------------
-// ★gsap★
-// TOPページ
-// -------------
-// const items = gsap.utils.toArray('.js-trigger');
-// items.forEach((item) => {
-//     gsap.fromTo(item,
-//         {y: 10,},
-//         {y: 0,duration: 2,ease: 'power2.out',
-//             scrollTrigger: {
-//                 trigger:  item,
-//                 start: 'top center',
-//                 onEnter: () => item.classList.add('is-active'),
-//                 onLeaveBack: () => item.classList.remove('is-active'),
-//             }
-//         }
-//     );
-// });
 
 
+// -----------------------
+//ALL__span化
+// -----------------------
 
-
-// -------------
-// ★gsap★
-// ABOUT詳細ページ
-// -------------
-// const tl = gsap.timeline();
-// tl.from(".gp-demo",{
-//         opacity:0,
-//         duration:3,
-//         y: "10%",
-//         ease: "Expo.easeOut"})
-
-//     .from(".gp-demo2",{
-//         opacity:0,
-//         duration: 3,
-//         y: "10%",
-//         ease: "Expo.easeOut"}, "<+=0.2")
-
-//     .from(".gp-demo3",{
-//         opacity:0,
-//         duration:3,
-//         y:"10%",
-//         ease: "Expo.easeOut"}, "<+=0.3");
-
-
-
-
-// -------------
-// ★gsap★
-// WORKS詳細ページ
-// -------------
-// const animes = gsap.utils.toArray('.js-demo');
-// animes.forEach((anime) => {
-//     gsap.from(anime,
-//         {
-//             opacity: 0,
-//             duration: 2,
-//             y: "30%",
-//             ease: "Power4.easeOut",
-//             scrollTrigger: {
-//                 markers: true,
-//                 trigger:  anime,
-//                 start: 'top center'
-//             }
-//         }
-//         );
-// });
-
-// gsap.from(".js-demo-img",{
-//     opacity: 0,
-//     y: -100,
-//     stagger: 0.3, //0.5秒遅れてそれぞれ再生
-//     ease: "Power4.easeOut",
-//     duration: 2,
-//     scrollTrigger: {
-//         markers: true,
-//         trigger:  ".js-demo-img",
-//         start: 'top center'
-//     }
-// })
+class SpanWrap {
+    constructor(target) {
+  
+      this.target = this.convertElement(target);
+      this.nodes = [...this.target.childNodes];
+  
+      this.convert();
+      console.log("spanでた");
+    }
+  
+    convert() {
+  
+      let spanWrapText = ""
+  
+      this.nodes.forEach((node) => {
+        if (node.nodeType == 3) {//テキストの場合
+          const text = node.textContent.replace(/\r?\n/g, '');//テキストから改行コード削除
+          //spanで囲んで連結
+          spanWrapText = spanWrapText + text.split('').reduce((acc, v) => {
+            return acc + `<span>${v}</span>`
+          }, "");
+        } else {//テキスト以外
+          //<br>などテキスト以外の要素をそのまま連結
+          spanWrapText = spanWrapText + node.outerHTML
+        }
+      })
+  
+      this.target.innerHTML = spanWrapText
+  
+    }
+    //jQueryオブジェクトや文字列セレクターを変換
+    convertElement(element) {
+        if (element instanceof HTMLElement) {
+          return element
+        }
+        // if (element instanceof jQuery) {
+        //   return element[0]
+        // }
+        return document.querySelector(element);
+      }
+}
+//実行
+const targets = [...document.querySelectorAll(".js-span")]
+targets.forEach( (target) => {
+  new SpanWrap(target);
+})
