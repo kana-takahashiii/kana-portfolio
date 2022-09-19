@@ -238,12 +238,11 @@ if(home) {
         // gsap works img×スクロール×ふわっと現れる記述　↓↓
         gsap.from(".js-demo-img",{
             opacity: 0,
-            y: -100,
+            y: "30%",
             stagger: 0.3,
             ease: "Power4.easeOut",
             duration: 2,
             scrollTrigger: {
-                // markers: true,
                 trigger:  ".js-demo-img",
                 start: 'top center'
             }

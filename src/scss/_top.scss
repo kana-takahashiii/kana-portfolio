@@ -159,11 +159,15 @@ body {
     // kv
     .content {
         .kv-wrap {
-            height: calc(100vh - 100px );
-            padding: 10vh 0;
+            height: 100vh;
+            align-items: center;
+            display: flex;
             position: relative;
+            // height: calc(100vh - 100px );
+            // padding: 10vh 0;
             .kv-copy {
-                position: absolute;
+                position: relative;
+                // position: absolute;
                 .kv-name {
                     font-size: clamp(4rem, 12vw, 14rem);
                     font-weight: 700;
@@ -172,16 +176,17 @@ body {
                 .kv-sub {
                     font-size: clamp( 1.3rem , 4vw , 3rem );
                 }
-            }
-            .parapara-top {
-                aspect-ratio: 387 / 512;
-                width: clamp(65px,10vw,140px);
-                position: absolute;
-                bottom: calc(97% - 10vh);
-                height: auto;
-                background: url(../img/parapara.png) no-repeat;
-                animation: parapara-top-sp 3.0s steps(2) infinite;
-                background-size: cover;
+                .parapara-top {
+                    aspect-ratio: 387 / 512;
+                    width: clamp(65px,10vw,140px);
+                    position: absolute;
+                    // bottom: calc(97% - 10vh);
+                    bottom: 90%;
+                    height: auto;
+                    background: url(../img/parapara.png) no-repeat;
+                    animation: parapara-top-sp 3.0s steps(2) infinite;
+                    background-size: cover;
+                }
             }
             .cir-sd {
                 display: flex;
@@ -367,16 +372,22 @@ body {
                 margin-top: 80px;
                 font-size: clamp( 2rem,4vw,3rem);
             }
-            .parapara-jmp {
-                aspect-ratio: 12/7;
-                width: 91px;
-                height: 160px;
-                bottom: calc(97% - 10vh);
-                position: absolute;
-                background: url(../img/sample.png) no-repeat;
-                -webkit-animation: parapara-jmp 3s steps(3) infinite;
-                animation: parapara-jmp 3s steps(3) infinite;
-                background-size: cover;
+            .section-item {
+                position: relative;
+                .parapara-jmp {
+                    position: absolute;
+                    aspect-ratio: 12/7;
+                    left: -10%;
+                    // レスポンシブ
+                    width: clamp(84px,10vw,91px);
+                    // width: 91px;
+                    height: 160px;
+                    bottom:0 ;
+                    background: url(../img/sample.png) no-repeat;
+                    -webkit-animation: parapara-jmp 3s steps(3) infinite;
+                    animation: parapara-jmp 3s steps(3) infinite;
+                    background-size: cover;
+                }
             }
 }
 
