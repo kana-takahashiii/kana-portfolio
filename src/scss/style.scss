@@ -97,31 +97,21 @@ body {
             opacity: 1;
         }
 }
-//消してみた
-// .works{
-//     opacity: 0;
-//     transition: opacity 0.5s linear;
-//         &.is-active {
-//             opacity: 1;
-//             // transition: all 0.5s 2s ease;
-//         }
-// }
-
-
 
 
 
 // -----SP-----
 @include mq(sp) {
-    .top {
-        width: var(--media-sp-width);
-        #works,#about,#contact{
-            padding-top: 100px;
-        }    
-    }
-    .about {
-        width: var(--media-sp-width) ;
+    body {
+        .top {
+            width: var(--media-sp-width);
+            #works,#about,#contact{
+                padding-top: 100px;
+            }    
+        }
+        .about {
+            width: var(--media-sp-width) ;
+        }
     }
 }
-
 // code-end

@@ -345,48 +345,67 @@ body {
     // --------------------
     // CONTACT
     // ---------------------
-    #contact.section-wrap{
+    #contact.section-wrap {
         padding-bottom: 80px;
-        .form a {
+        .last-mg{
+            // 点滅する既述
+            animation: blinkEffect 1s ease infinite;
+            margin-top: 80px;
+            font-size: clamp( 2rem,4vw,3rem);
+        }
+
+        .form {
+            margin-top: 40px;
+            a {
             font-size: clamp(2rem,7vw,8rem);
             color: var(--font-color);
             text-decoration: none;
+            // アドレスのアンダーバーの指定↓
             position: relative;
-            &::after {
-                content: "";
-                border: 1px solid var(--font-color);
-                background-color: var(--font-color);
-                color: #fff;
-                padding: 1px;
-                width: 100%;
-                display: block;
-                position: absolute;
-                bottom: 0;
-            }
-        }
-    }
-            .last-mg p {
-                margin-top: 80px;
-                font-size: clamp( 2rem,4vw,3rem);
-            }
-            .section-item {
-                position: relative;
-                .parapara-jmp {
+                // 疑似要素
+                &::after {
+                    content: "";
+                    border: 1px solid var(--font-color);
+                    background-color: var(--font-color);
+                    color: #fff;
+                    padding: 1px;
+                    width: 100%;
+                    display: block;
                     position: absolute;
-                    aspect-ratio: 12/7;
-                    left: -10%;
-                    // レスポンシブ
-                    width: clamp(84px,10vw,91px);
-                    // width: 91px;
-                    height: 160px;
-                    bottom:0 ;
-                    background: url(../img/sample.png) no-repeat;
-                    -webkit-animation: parapara-jmp 3s steps(3) infinite;
-                    animation: parapara-jmp 3s steps(3) infinite;
-                    background-size: cover;
+                    bottom: 0;
                 }
             }
-}
+            .parapara-jmp {
+                aspect-ratio: 12 / 7;
+                width: 91px;
+                height: 160px;
+                bottom: 0;
+                left: -10vw;
+                position: absolute;
+                background: url(../img/sample.png) no-repeat;
+                animation: parapara-jmp 3.0s steps(3) infinite;
+                background-size: cover;
+            }
+        }
+
+        // .section-item {
+        //     position: relative;
+        //     .parapara-jmp {
+        //         position: absolute;
+        //         aspect-ratio: 12/7;
+        //         left: -10%;
+        //         // レスポンシブ
+        //         width: clamp(84px,10vw,91px);
+        //         // width: 91px;
+        //         height: 160px;
+        //         bottom:0 ;
+        //         background: url(../img/sample.png) no-repeat;
+        //         -webkit-animation: parapara-jmp 3s steps(3) infinite;
+        //         animation: parapara-jmp 3s steps(3) infinite;
+        //         background-size: cover;
+        //     }
+        // }
+    }
 
             
 
@@ -475,36 +494,56 @@ body {
     }
 
     // WORKS
-    .section-item{
-        .swiper.slider-works {
-            padding: 40px 0 100px;
-            margin-left: -5vw;
-            .swiper-wrapper {
-                width: 80vw;
-                padding-top: 0;
-            }
+    #works.section-wrap {
+        position: relative;
+        .section-item {
             .swiper.slider-works {
-                // margin-left: -5vw;
-                padding-top: 20px;
-            }
-            .section-item {
-                margin-top: 20px;
+                padding: 40px 0 100px;
+                margin-left: -5vw;
                 .swiper-wrapper {
+                    width: 80vw;
                     padding-top: 0;
                 }
-            }
-        }  
+                .swiper.slider-works {
+                    // margin-left: -5vw;
+                    padding-top: 20px;
+                }
+                .section-item {
+                    margin-top: 20px;
+                    .swiper-wrapper {
+                        padding-top: 0;
+                    }
+                }
+            }  
+        }
         // back-ground
         .bg-br {
             margin-left: -5vw;
             height: calc(100px + 26vw);
-            // bottom: 0;
-            bottom: 100px;
+            bottom: 0;
         }
-    }
+
         #works.section-wrap .swiper.slider-works .swiper-wrapper {
             padding-top: 0;
         }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     // ABOUT
     #about {
         .slider-about {
@@ -512,6 +551,7 @@ body {
         }
     }
     }
+}
 }
 //-----------
 // SP-end

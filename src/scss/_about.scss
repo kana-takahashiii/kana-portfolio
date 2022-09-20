@@ -157,46 +157,43 @@
 //    SP
 // ----------
 @include mq(sp) {
-    .about {
-        padding-top: 120px;
-        .about-wrap {
-            display: flex;
-            flex-direction: column;
-            top: 10vw;
-            grid-gap: 40px;
-            margin: 40px 0 100px;
-            .about-text {
-                margin-top: 40px;
-                .text {
-                    row-gap: 40px;  
+    body {
+        .about {
+            padding-top: 120px;
+            .about-wrap {
+                display: flex;
+                flex-direction: column;
+                top: 10vw;
+                grid-gap: 40px;
+                margin: 40px 0 100px;
+                .about-text {
+                    margin-top: 40px;
+                    .text {
+                        row-gap: 40px;  
+                    }
                 }
-            }
-            .cr-about {
-                margin: 80px 0 40px 0;
-                gap: 40px;
-                .cr-text {
+                .cr-about {
+                    margin: 80px 0 40px 0;
                     gap: 40px;
+                    .cr-text {
+                        gap: 40px;
+                    }
                 }
             }
-        }
-        .bg-br-about {
-            transform: none;
-            height: 100%;
-            margin-left: 0;
-        }
-        .parapara {
-            // bottom: 0;
-            top: 90%;
-            left: -3%;
-        }
+            .bg-br-about {
+                transform: none;
+                height: 100%;
+                margin-left: 0;
+            }
 
-    }
+        }
+    
     // btn
     .footer-inner {
         width: var(--media-sp-width);
         padding-top: 0;
     }
-
+}
 
 //SP-code-end
 }

@@ -223,7 +223,6 @@ if(home) {
                     y: "30%",
                     ease: "Power4.easeOut",
                     scrollTrigger: {
-                        // markers: true,
                         trigger:  anime,
                         start: 'top center'
                     }
@@ -270,7 +269,6 @@ class SpanWrap {
       this.nodes = [...this.target.childNodes];
   
       this.convert();
-      console.log("spanでた");
     }
   
     convert() {
@@ -305,7 +303,82 @@ class SpanWrap {
       }
 }
 //実行
-const targets = [...document.querySelectorAll(".js-span")]
+const targets = [...document.querySelectorAll(".js-span,.js-kv-spn")]
 targets.forEach( (target) => {
   new SpanWrap(target);
 })
+
+
+
+
+
+// -----------------------
+//ALL__spanをgsapに
+// -----------------------
+//kana takahashiを動かす
+gsap.from(".js-kv-spn span", {
+    opacity: 0,
+    // y: "30%",
+    stagger: 0.3,
+    ease: "Power4.easeIn",
+    duration: 2,
+    delay: 0.5, //アニメーションが開始されるまで
+  });
+
+
+
+
+
+
+// ブラッシュアップ予定、span化した各タイトルをstaggerでアニメーションする↓↓
+// const titles = gsap.utils.toArray('.js-span');
+// // const titles = [...document.querySelectorAll('.js-span')];
+
+// titles.forEach((title) => {
+//     // const spans = gsap.utils.toArray('.js-span span');
+//     // const spans = title.document.querySelectorAll('span');
+//     console.log(title);
+    
+
+//     gsap.from(title,
+//         {
+//             // delay: 1, //アニメーションが開始されるまで
+//             // duration: 1.5, //アニメーションの長さ
+//             // opacity: 0,
+//             // stagger: 0.3,
+//             // ease: "Power4.easeOut",
+            
+//             scrollTrigger: {
+//                 trigger:  title,
+//                 start: 'top center',
+//                 onEnter: () => gsap.from(title.document.querySelectorAll('span'), {
+//                     delay: 1, 
+//                     duration: 1.5, //アニメーションの長さ
+//                     opacity: 0,
+//                     stagger: 0.3,
+//                     ease: "Power4.easeOut",
+//                 }),
+//                 markers: true
+//             }
+//         }
+//     );
+
+//     // spans.forEach((span) => {
+//     //     console.log(span);
+
+//     //     gsap.from(span,
+//     //     {
+//     //         delay: 1, //アニメーションが開始されるまで
+//     //         duration: 1.5, //アニメーションの長さ
+//     //         opacity: 0,
+//     //         stagger: 0.3,
+//     //         ease: "Power4.easeOut",
+
+//     //         scrollTrigger: {
+//     //             trigger:  ".section-wrap",
+//     //             start: 'top center',
+//     //             markers: true
+//     //         }
+//     //     });
+//     // })
+// });
