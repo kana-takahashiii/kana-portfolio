@@ -352,8 +352,23 @@ body {
             animation: blinkEffect 1s ease infinite;
             margin-top: 80px;
             font-size: clamp( 2rem,4vw,3rem);
+            // parapa-jumpの位置決め
+            position: relative;
+            
         }
-
+        .parapara-jmp {
+            aspect-ratio: 12 / 7;
+            width: 91px;
+            height: 160px;
+            // bottom: 0;
+            bottom: 10%;
+            left: -10vw;
+            position: absolute;
+            background: url(../img/sample.png) no-repeat;
+            animation: parapara-jmp 3.0s steps(3) infinite;
+            background-size: cover;
+        }
+        
         .form {
             margin-top: 40px;
             a {
@@ -375,17 +390,18 @@ body {
                     bottom: 0;
                 }
             }
-            .parapara-jmp {
-                aspect-ratio: 12 / 7;
-                width: 91px;
-                height: 160px;
-                bottom: 0;
-                left: -10vw;
-                position: absolute;
-                background: url(../img/sample.png) no-repeat;
-                animation: parapara-jmp 3.0s steps(3) infinite;
-                background-size: cover;
-            }
+            // parapa-jumpの位置決め
+            // .parapara-jmp {
+            //     aspect-ratio: 12 / 7;
+            //     width: 91px;
+            //     height: 160px;
+            //     bottom: 0;
+            //     left: -10vw;
+            //     position: absolute;
+            //     background: url(../img/sample.png) no-repeat;
+            //     animation: parapara-jmp 3.0s steps(3) infinite;
+            //     background-size: cover;
+            // }
         }
 
         // .section-item {
@@ -433,7 +449,7 @@ body {
 
 
 
-
+}
 
 //-----------
 // TAB
@@ -463,11 +479,17 @@ body {
 }
 
 
+
+
+
+
+
 //-----------
 // SP
 // ----------
 @include mq(sp) {
     .top {
+        // kv関係
         .content {
             .kv-wrap  { 
                 height: calc(100vh - 200px);
@@ -482,16 +504,15 @@ body {
                 }
             }
         }
-
         .section-wrap {
-        padding-top: 100px;
-        h2 {
-            text-align: center;
+            padding-top: 100px;
+            h2 {
+                text-align: center;
+            }
+            .section-item {
+                margin-top: 40px;
+            }
         }
-        .section-item {
-            margin-top: 40px;
-        }
-    }
 
     // WORKS
     #works.section-wrap {
@@ -522,25 +543,10 @@ body {
             height: calc(100px + 26vw);
             bottom: 0;
         }
-
         #works.section-wrap .swiper.slider-works .swiper-wrapper {
             padding-top: 0;
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -550,8 +556,24 @@ body {
             width: min(51vw,200px);
         }
     }
+
+    // contact
+    #contact.section-wrap{
+        .parapara-jmp {
+            bottom: -20%;
+            left: -5vw;
+        }
     }
-}
+
+    
+
+
+
+
+
+
+    // top endの　｝
+    }
 }
 //-----------
 // SP-end

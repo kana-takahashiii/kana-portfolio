@@ -303,7 +303,7 @@ class SpanWrap {
       }
 }
 //実行
-const targets = [...document.querySelectorAll(".js-span,.js-kv-spn")]
+const targets = [...document.querySelectorAll(".js-span,.js-kv-spn,.js-kv-spn2")]
 targets.forEach( (target) => {
   new SpanWrap(target);
 })
@@ -318,12 +318,28 @@ targets.forEach( (target) => {
 //kana takahashiを動かす
 gsap.from(".js-kv-spn span", {
     opacity: 0,
-    // y: "30%",
-    stagger: 0.3,
+    stagger: 0.1,
     ease: "Power4.easeIn",
-    duration: 2,
+    duration: 1,
     delay: 0.5, //アニメーションが開始されるまで
   });
+
+
+
+//   const tx = gsap.timeline();
+//   tx.from(".js-kv-spn spn",{
+//           opacity:0,
+//           duration:3,
+//           y: "10%",
+//           stagger: 0.3,
+//           ease: "Expo.easeOut"})
+
+//       .from(".js-kv-spn2 spn",{
+//           opacity:0,
+//           duration: 3,
+//           y: "10%",
+//           stagger: 0.3,
+//           ease: "Expo.easeOut"}, "<+=0.2")
 
 
 
