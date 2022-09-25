@@ -186,6 +186,7 @@ if(home) {
     });
     // gsap scrollTrigger記述　↑↑
     
+    // about
     } else if(about) {
 
         // gsap about ふわっと現れる記述　↓↓
@@ -211,7 +212,7 @@ if(home) {
             
             
 
-
+    // works
     } else if(works) {
         // gsap works スクロール×ふわっと現れる記述　↓↓
         const animes = gsap.utils.toArray('.js-demo');
@@ -282,7 +283,7 @@ class SpanWrap {
           spanWrapText = spanWrapText + text.split('').reduce((acc, v) => {
             return acc + `<span>${v}</span>`
           }, "");
-        } else {//テキスト以外
+        } else {  //テキスト以外
           //<br>などテキスト以外の要素をそのまま連結
           spanWrapText = spanWrapText + node.outerHTML
         }
@@ -315,7 +316,7 @@ targets.forEach( (target) => {
 // -----------------------
 //ALL__spanをgsapに
 // -----------------------
-//kana takahashiを動かす
+//kv-name　アニメーション
 gsap.from(".js-kv-spn span", {
     opacity: 0,
     stagger: 0.1,
