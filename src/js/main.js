@@ -313,9 +313,14 @@ targets.forEach( (target) => {
 
 
 
-// -----------------------
-//ALL__spanをgsapに
-// -----------------------
+// -----------------------------------
+//　kvのアニメーション　　gsap span anime
+// -----------------------------------
+gsap.set(".parapara-top",
+    {
+        opacity: 0,
+    }
+    );
 gsap.set(".js-kv-spn span",
     {
         opacity: 0,
@@ -333,32 +338,36 @@ gsap.set(".cir-sd",
         opacity: 0,
     }
     );
-
-
 const targetEl = document.querySelector('.content');
     targetEl.addEventListener('animationend',() => {
-    console.log('オープンされました');
     var kv = gsap.timeline();
         kv.to(".js-kv-spn span",{
             opacity: 1,
-            duration: 1,
-            stagger: 0.1,
-            ease: "Expo.easeOut"
+            duration: 3,
+            stagger: 0.07,
         })
         
         .to(".js-kv-spn2 span",{
             opacity:1,
-            duration: 0.5,
-            stagger: 0.1,
-            ease: "Expo.easeOut"
+            duration: 3,
+            stagger: 0.03,
         }, "<+=0.01")
     
-        .to(".cir-sd", {
+        .to(".cir-sd",{
             opacity:1,
             duration: 1,
-            ease: "Expo.easeOut"
-        })
+            ease: "power4.inOut",
+            y: "-20%",
+        },"<+=3")
+
+        .to(".parapara-top",{
+            opacity:1,
+            duration: 1,
+            ease: "power4.inOut",
+            y: "-10%"
+        },"<+=0.01")
 });
+// ＊＊＊＊＊＊
 
 
 
