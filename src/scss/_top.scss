@@ -46,50 +46,52 @@ body {
 // ---------------------
 // オープニングローディング
 // ---------------------
-.shutter{
-    //ローディング時
-    position:fixed;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-    background-color: var(--shutter-burger-color);
-    z-index:9999;
-    animation: byeShutter 2.6s forwards;
-    // 疑似要素
-    &::before,
-    &::after{
-        content:'';
-        position:absolute;
+.shutter {
+        position:fixed;
         top:0;
         left:0;
+        right:0;
         bottom:0;
-        margin:auto;
-    }
-    // カーテン１枚目
-    &::before{
-        background-color:#b5a58b;
-        width:0;
-        height:1px;
-        animation: shutterOpen1 3s forwards;
-    }
-    // カーテン２枚目
-    &::after{
-        background-color: #f3f3f3;
-        // width:120%;
-        width:100%;
-        height:0;
-        margin-left:-10%;
-        animation: shutterOpen2 3s forwards;
-    }
+        background-color: var(--shutter-burger-color);
+        z-index:9999;
+        animation: byeShutter 2.6s forwards;
+        // 疑似要素
+        &::before,
+        &::after{
+            content:'';
+            position:absolute;
+            top:0;
+            left:0;
+            bottom:0;
+            margin:auto;
+        }
+        // カーテン１枚目
+        &::before{
+            background-color:#b5a58b;
+            width:0;
+            height:1px;
+            animation: shutterOpen1 3s forwards;
+        }
+        // カーテン２枚目
+        &::after{
+            background-color: #f3f3f3;
+            // width:120%;
+            width:100%;
+            height:0;
+            margin-left:-10%;
+            animation: shutterOpen2 3s forwards;
+        }
 }
+
 
 
 // ---------------------
 // kv
 // ---------------------
+//  ななめから登場
 .content{
     width: 100%;
+    // animation: contentScale 5s forwards;
     animation: contentScale 2.5s forwards;
 }
 // shutter挙動

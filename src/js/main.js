@@ -316,15 +316,79 @@ targets.forEach( (target) => {
 // -----------------------
 //ALL__spanをgsapに
 // -----------------------
-//kv-name　アニメーション
-gsap.from(".js-kv-spn span", {
-    opacity: 0,
-    stagger: 0.1,
-    ease: "Power4.easeIn",
-    duration: 1,
-    delay: 0.5, //アニメーションが開始されるまで
-  });
+gsap.set(".js-kv-spn span",
+    {
+        opacity: 0,
+    }
+    );
 
+gsap.set(".js-kv-spn2 span",
+    {
+        opacity: 0,
+    }
+    );
+
+gsap.set(".cir-sd",
+    {
+        opacity: 0,
+    }
+    );
+
+
+const targetEl = document.querySelector('.content');
+    targetEl.addEventListener('animationend',() => {
+    console.log('オープンされました');
+    var kv = gsap.timeline();
+        kv.to(".js-kv-spn span",{
+            opacity: 1,
+            duration: 1,
+            stagger: 0.1,
+            ease: "Expo.easeOut"
+        })
+        
+        .to(".js-kv-spn2 span",{
+            opacity:1,
+            duration: 0.5,
+            stagger: 0.1,
+            ease: "Expo.easeOut"
+        }, "<+=0.01")
+    
+        .to(".cir-sd", {
+            opacity:1,
+            duration: 1,
+            ease: "Expo.easeOut"
+        })
+});
+
+
+
+
+
+
+
+
+
+
+
+// const element = document.querySelector('.shutter');
+// element.addEventListener('active',() => {
+//     console.log('オープンされました');
+
+// const kv = gsap.timeline();
+// kv.from(".js-kv-spn span",{
+//     opacity:0,
+//     duration:1,
+//     y: "10%",
+//     stagger: 0.1,
+//     ease: "Expo.easeOut"})
+
+// .from(".js-kv-spn2 span",{
+//     opacity:0,
+//     duration: 1,
+//     stagger: 0.1,
+//     ease: "Expo.easeOut"}, "<+=3");
+
+// });
 
 
 //   const tx = gsap.timeline();
