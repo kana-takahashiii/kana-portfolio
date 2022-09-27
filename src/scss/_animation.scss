@@ -20,7 +20,7 @@
 
 
 
-// about page anime
+// aboutpage anime
 @keyframes parapara-about {
     to {
         background-position: -(160px) 0 ; 
@@ -28,15 +28,23 @@
     
 }
 
-
+// contact anime
 @keyframes parapara-jmp {
     to {
-        background-position: -(137px) 0 ; 
+        background-position: -(274px) 0 ; 
     }
 }
-// @keyframes parapara-jmp {
-//     to {
-//         background-position: -(274px) 0 ; 
-//     }
-// }
 
+
+
+
+
+
+// contact anime-----SP版
+@include mq(sp) {
+    @keyframes parapara-jmp {
+        to {
+            background-position: -(137px) 0 ; 
+        }
+    }
+}
