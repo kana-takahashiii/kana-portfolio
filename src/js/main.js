@@ -385,10 +385,10 @@ const targetEl = document.querySelector('.content');
             stagger: 0.07,
 
             // ScrollTriggerとforEachを混ぜればいいのか？？
-            scrollTrigger: {
-                trigger:  ".js-span",
-                start: 'top center',
-            }
+            // scrollTrigger: {
+            //     trigger:  ".js-span",
+            //     start: 'top center',
+            // }
         });
 });
 // -----------------------------------
