@@ -347,21 +347,22 @@ body {
     // ---------------------
     #contact.section-wrap {
         padding-bottom: 80px;
+        // parapa-jumpの位置決め
+        position: relative;
+
+        
         .last-mg{
             margin-top: 80px;
             font-size: clamp( 2rem,4vw,3rem);
-            // parapa-jumpの位置決め
-            position: relative;
-            
         }
         .parapara-jmp {
+            position: absolute;
             aspect-ratio: 12 / 7;
             width: 91px;
             height: 160px;
             // bottom: 0;
             bottom: 10%;
             left: -10vw;
-            position: absolute;
             background: url(../img/sample.png) no-repeat;
             animation: parapara-jmp 3.0s steps(3) infinite;
             background-size: cover;
