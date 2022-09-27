@@ -169,7 +169,7 @@ if(home) {
     smoothHomeAnchor();
     
 
-    // gsap scrollTrigger記述　↓↓
+    // gsap 各セクション　scrollTrigger　↓↓
     const items = gsap.utils.toArray('.js-trigger');
     items.forEach((item) => {
         gsap.fromTo(item,
@@ -184,7 +184,7 @@ if(home) {
         }
         );
     });
-    // gsap scrollTrigger記述　↑↑
+    // gsap 各セクション　scrollTrigger　記述　↑↑
     
     // about
     } else if(about) {
@@ -326,33 +326,42 @@ gsap.set(".js-kv-spn span",
         opacity: 0,
     }
     );
-
 gsap.set(".js-kv-spn2 span",
     {
         opacity: 0,
     }
     );
-
 gsap.set(".cir-sd",
     {
         opacity: 0,
     }
     );
+gsap.set(".js-span span",
+    {
+        opacity: 0,
+    }
+    );
+
+
+
 const targetEl = document.querySelector('.content');
     targetEl.addEventListener('animationend',() => {
     var kv = gsap.timeline();
+        // kana takahawshi
         kv.to(".js-kv-spn span",{
             opacity: 1,
             duration: 3,
             stagger: 0.07,
         })
-        
+
+        // hi!~~
         .to(".js-kv-spn2 span",{
             opacity:1,
             duration: 3,
             stagger: 0.03,
         }, "<+=0.01")
-    
+
+        // svg img
         .to(".cir-sd",{
             opacity:1,
             duration: 1,
@@ -360,12 +369,22 @@ const targetEl = document.querySelector('.content');
             y: "-20%",
         },"<+=3")
 
+        // animetion
         .to(".parapara-top",{
             opacity:1,
             duration: 1,
             ease: "power4.inOut",
             y: "-10%"
         },"<+=0.01")
+
+        // 各タイトル
+        .to(".js-span span",{
+            opacity: 1,
+            duration: 3,
+            stagger: 0.07,
+        })
+        console.log("出力OK");
+
 });
 // ＊＊＊＊＊＊
 
@@ -377,98 +396,3 @@ const targetEl = document.querySelector('.content');
 
 
 
-
-
-// const element = document.querySelector('.shutter');
-// element.addEventListener('active',() => {
-//     console.log('オープンされました');
-
-// const kv = gsap.timeline();
-// kv.from(".js-kv-spn span",{
-//     opacity:0,
-//     duration:1,
-//     y: "10%",
-//     stagger: 0.1,
-//     ease: "Expo.easeOut"})
-
-// .from(".js-kv-spn2 span",{
-//     opacity:0,
-//     duration: 1,
-//     stagger: 0.1,
-//     ease: "Expo.easeOut"}, "<+=3");
-
-// });
-
-
-//   const tx = gsap.timeline();
-//   tx.from(".js-kv-spn spn",{
-//           opacity:0,
-//           duration:3,
-//           y: "10%",
-//           stagger: 0.3,
-//           ease: "Expo.easeOut"})
-
-//       .from(".js-kv-spn2 spn",{
-//           opacity:0,
-//           duration: 3,
-//           y: "10%",
-//           stagger: 0.3,
-//           ease: "Expo.easeOut"}, "<+=0.2")
-
-
-
-
-
-
-// ブラッシュアップ予定、span化した各タイトルをstaggerでアニメーションする↓↓
-// const titles = gsap.utils.toArray('.js-span');
-// // const titles = [...document.querySelectorAll('.js-span')];
-
-// titles.forEach((title) => {
-//     // const spans = gsap.utils.toArray('.js-span span');
-//     // const spans = title.document.querySelectorAll('span');
-//     console.log(title);
-    
-
-//     gsap.from(title,
-//         {
-//             // delay: 1, //アニメーションが開始されるまで
-//             // duration: 1.5, //アニメーションの長さ
-//             // opacity: 0,
-//             // stagger: 0.3,
-//             // ease: "Power4.easeOut",
-            
-//             scrollTrigger: {
-//                 trigger:  title,
-//                 start: 'top center',
-//                 onEnter: () => gsap.from(title.document.querySelectorAll('span'), {
-//                     delay: 1, 
-//                     duration: 1.5, //アニメーションの長さ
-//                     opacity: 0,
-//                     stagger: 0.3,
-//                     ease: "Power4.easeOut",
-//                 }),
-//                 markers: true
-//             }
-//         }
-//     );
-
-//     // spans.forEach((span) => {
-//     //     console.log(span);
-
-//     //     gsap.from(span,
-//     //     {
-//     //         delay: 1, //アニメーションが開始されるまで
-//     //         duration: 1.5, //アニメーションの長さ
-//     //         opacity: 0,
-//     //         stagger: 0.3,
-//     //         ease: "Power4.easeOut",
-
-//     //         scrollTrigger: {
-//     //             trigger:  ".section-wrap",
-//     //             start: 'top center',
-//     //             markers: true
-//     //         }
-//     //     });
-//     // })
-// });
