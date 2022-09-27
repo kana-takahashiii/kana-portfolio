@@ -31,16 +31,12 @@
 
 @keyframes parapara-jmp {
     to {
-        background-position: -(274px) 0 ; 
+        background-position: -(137px) 0 ; 
     }
 }
+// @keyframes parapara-jmp {
+//     to {
+//         background-position: -(274px) 0 ; 
+//     }
+// }
 
-// Contact　pタグ　点滅
-@keyframes blinkEffect {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    } 
-}
