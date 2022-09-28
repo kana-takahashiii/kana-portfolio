@@ -205,8 +205,8 @@ targets.forEach( (target) => {
 //ALL__条件分岐
 // -----------------------
 const home = document.querySelector(".shutter"); //TOP
-const about = document.querySelector(".about"); //ABOUT
-const works = document.querySelector(".works"); //WORKS
+const about = document.querySelector(".about"); //ABOUTページ
+const works = document.querySelector(".works"); //WORKSページ
 if(home) {
     // スムーススクロール記述　↓↓
     let smoothHomeAnchor =()=> {
@@ -230,13 +230,12 @@ if(home) {
     
 
     // gsap 各セクション　scrollTrigger　↓↓
-    // const items = gsap.utils.toArray('.js-trigger');  
     const items = document.querySelectorAll('.js-trigger');
     const titleFades = document.querySelectorAll('.js-span');
         items.forEach((item) => {
             gsap.fromTo(item,
-                {y: 100},
-                {y: 0,
+                {y: 100,opacity:0},
+                {y: 0,opacity:1,
                 duration: 2,
                 ease: 'power2.out',
                 scrollTrigger: {
@@ -244,7 +243,6 @@ if(home) {
                     start: 'top center',
                     onEnter: () => item.classList.add('is-active'),
                     onLeaveBack: () => item.classList.remove('is-active'),
-                    markers: true
                 }
                 }
             );
@@ -260,7 +258,6 @@ if(home) {
                         // 各セクションタイトル
                         trigger:  titleFade,
                         start: 'top center',
-                        markers: true
                     }
                 });
         })
