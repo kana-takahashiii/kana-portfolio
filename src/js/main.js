@@ -358,14 +358,11 @@ gsap.set(".cir-sd",
         opacity: 0,
     }
     );
- // ＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
-// ↓この位置でよくないとおもうからあとで修正する。
-gsap.set(".js-span span",
-    {
-        opacity: 0,
-    }
-    );
-// ＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
+// gsap.set(".js-span span",
+//     {
+//         opacity: 0,
+//     }
+//     );
 const targetEl = document.querySelector('.content');
     targetEl.addEventListener('animationend',() => {
     var kv = gsap.timeline();
