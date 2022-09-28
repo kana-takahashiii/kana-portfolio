@@ -335,26 +335,12 @@ if(home) {
 // -----------------------------------
 //　kvのアニメーション　　gsap span anime
 // -----------------------------------
-gsap.set(".parapara-top",
-    {
-        opacity: 0,
-    }
-    );
-gsap.set(".js-kv-spn span",
-    {
-        opacity: 0,
-    }
-    );
-gsap.set(".js-kv-spn2 span",
-    {
-        opacity: 0,
-    }
-    );
-gsap.set(".cir-sd",
-    {
-        opacity: 0,
-    }
-    );
+gsap.set(".parapara-top",{opacity: 0,});
+gsap.set(".js-kv-spn span",{opacity: 0,});
+gsap.set(".js-kv-spn2 span", {opacity: 0,});
+gsap.set(".cir-sd",{opacity: 0,});
+gsap.set(".header-nav-pc", {opacity: 0,});
+
 // gsap.set(".js-span span",
 //     {
 //         opacity: 0,
@@ -383,7 +369,7 @@ const targetEl = document.querySelector('.content');
             duration: 1,
             ease: "power4.inOut",
             y: "-20%",
-        },"<+=3")
+        },"<+=2")
 
         // parapara img
         .to(".parapara-top",{
@@ -392,6 +378,14 @@ const targetEl = document.querySelector('.content');
             ease: "power4.inOut",
             y: "-10%"
         },"<+=0.01")
+
+
+        .to(".header-nav-pc",{
+            opacity:1,
+            duration: 1,
+            // ease: "power4.inOut",
+            // y: "-10%"
+        },"<")
 
 });
 // -----------------------------------
