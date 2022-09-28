@@ -249,8 +249,8 @@ if(home) {
         titleFades.forEach(( titleFade ) => {
             gsap.to( titleFade.querySelectorAll( 'span' ), {
                     opacity: 1,
-                    duration: 3,
-                    stagger: 0.07,
+                    duration: 2,
+                    stagger: 0.09,
                     scrollTrigger: {
                         // 各セクションタイトル
                         trigger:  titleFade,
