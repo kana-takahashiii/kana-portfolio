@@ -240,7 +240,7 @@ if(home) {
                 duration: 2,
                 ease: 'power2.out',
                 scrollTrigger: {
-                    trigger:  item.querySelectorAll( 'span' ),
+                    trigger:  item.querySelectorAll( '.js-span' ),
                     // trigger:  item,
                     start: 'top center',
                     onEnter: () => item.classList.add('is-active'),
