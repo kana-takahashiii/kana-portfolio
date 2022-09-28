@@ -230,6 +230,7 @@ if(home) {
     
 
     // gsap 各セクション　scrollTrigger　↓↓
+    // const items = gsap.utils.toArray('.js-trigger');  
     const items = document.querySelectorAll('.js-trigger');
     const titleFades = document.querySelectorAll('.js-span');
         items.forEach((item) => {
@@ -239,7 +240,6 @@ if(home) {
                 duration: 2,
                 ease: 'power2.out',
                 scrollTrigger: {
-                    // 各セクションタイトル（.js-span）
                     trigger:  item.querySelectorAll( '.js-span' ),
                     start: 'top center',
                     onEnter: () => item.classList.add('is-active'),
@@ -248,13 +248,16 @@ if(home) {
                 }
                 }
             );
+
+        gsap.set(".js-span span",{opacity: 0,});
+
         titleFades.forEach(( titleFade ) => {
             gsap.to( titleFade.querySelectorAll( 'span' ), {
                     opacity: 1,
                     duration: 2,
                     stagger: 0.07,
                     scrollTrigger: {
-                        // 各セクションタイトル＝.js-span
+                        // 各セクションタイトル
                         trigger:  titleFade,
                         start: 'top center',
                         markers: true
@@ -355,11 +358,14 @@ gsap.set(".cir-sd",
         opacity: 0,
     }
     );
+ // ＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
+// ↓この位置でよくないとおもうからあとで修正する。
 gsap.set(".js-span span",
     {
         opacity: 0,
     }
     );
+// ＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
 const targetEl = document.querySelector('.content');
     targetEl.addEventListener('animationend',() => {
     var kv = gsap.timeline();
@@ -392,20 +398,6 @@ const targetEl = document.querySelector('.content');
             ease: "power4.inOut",
             y: "-10%"
         },"<+=0.01")
-
-        // const titleFades = document.querySelectorAll('.js-span');
-        // titleFades.forEach(( titleFade ) => {
-        //     gsap.to( titleFade.querySelectorAll( 'span' ), {
-        //             opacity: 1,
-        //             duration: 2,
-        //             stagger: 0.07,
-        //             scrollTrigger: {
-        //                 trigger:  titleFade,
-        //                 start: 'top center',
-        //                 markers: true
-        //             }
-        //         });
-        // })
 
 });
 // -----------------------------------
