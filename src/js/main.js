@@ -250,7 +250,7 @@ if(home) {
             gsap.to( titleFade.querySelectorAll( 'span' ), {
                     opacity: 1,
                     duration: 2,
-                    stagger: 0.09,
+                    stagger: 0.07,
                     scrollTrigger: {
                         // 各セクションタイトル
                         trigger:  titleFade,
@@ -312,14 +312,6 @@ if(home) {
     // -----------------------------------
     // ＊＊＊＊＊＊
     // -----------------------------------
-
-
-
-
-
-
-
-
 
     //各セクションタイトルと要素がふわっと同時に浮き上がる　↓↓
     // about-page　のみ
