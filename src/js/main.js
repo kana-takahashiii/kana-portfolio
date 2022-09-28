@@ -377,15 +377,12 @@ const targetEl = document.querySelector('.content');
             duration: 1,
             ease: "power4.inOut",
             y: "-10%"
-        },"<+=0.01")
-
+        },"<")
 
         .to(".header-nav-pc",{
             opacity:1,
             duration: 1,
-            // ease: "power4.inOut",
-            // y: "-10%"
-        },"<")
+        },"<+=2")
 
 });
 // -----------------------------------
