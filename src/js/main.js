@@ -230,7 +230,6 @@ if(home) {
     
 
     // gsap 各セクション　scrollTrigger　↓↓
-    // const items = gsap.utils.toArray('.js-trigger');  
     const items = document.querySelectorAll('.js-trigger');
     const titleFades = document.querySelectorAll('.js-span');
         items.forEach((item) => {
@@ -240,8 +239,8 @@ if(home) {
                 duration: 2,
                 ease: 'power2.out',
                 scrollTrigger: {
+                    // 各セクションタイトル（.js-span）
                     trigger:  item.querySelectorAll( '.js-span' ),
-                    // trigger:  item,
                     start: 'top center',
                     onEnter: () => item.classList.add('is-active'),
                     onLeaveBack: () => item.classList.remove('is-active'),
@@ -255,6 +254,7 @@ if(home) {
                     duration: 2,
                     stagger: 0.07,
                     scrollTrigger: {
+                        // 各セクションタイトル＝.js-span
                         trigger:  titleFade,
                         start: 'top center',
                         markers: true
