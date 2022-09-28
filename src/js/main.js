@@ -230,27 +230,42 @@ if(home) {
     
 
     // gsap 各セクション　scrollTrigger　↓↓
-    const items = gsap.utils.toArray('.js-trigger');
-    items.forEach((item) => {
-        gsap.fromTo(item,
-            {y: 10,},
-            {y: 0,
-            duration: 2,
-            ease: 'power2.out',
-            scrollTrigger: {
-                trigger:  item,
-                start: 'top center',
-                onEnter: () => item.classList.add('is-active'),
-                onLeaveBack: () => item.classList.remove('is-active'),
-            }
-        }
-        );
+    // const items = gsap.utils.toArray('.js-trigger');  
+    const items = document.querySelectorAll('.js-trigger');
+    const titleFades = document.querySelectorAll('.js-span');
+        items.forEach((item) => {
+            gsap.fromTo(item,
+                {y: 100},
+                {y: 0,
+                duration: 2,
+                ease: 'power2.out',
+                scrollTrigger: {
+                    trigger:  item.querySelectorAll( 'span' ),
+                    // trigger:  item,
+                    start: 'top center',
+                    onEnter: () => item.classList.add('is-active'),
+                    onLeaveBack: () => item.classList.remove('is-active'),
+                    markers: true
+                }
+                }
+            );
+        titleFades.forEach(( titleFade ) => {
+            gsap.to( titleFade.querySelectorAll( 'span' ), {
+                    opacity: 1,
+                    duration: 2,
+                    stagger: 0.07,
+                    scrollTrigger: {
+                        trigger:  titleFade,
+                        start: 'top center',
+                        markers: true
+                    }
+                });
+        })
     });
     // gsap 各セクション　scrollTrigger　記述　↑↑
     
     // about
     } else if(about) {
-
         // gsap about ふわっと現れる記述　↓↓
         const tl = gsap.timeline();
         tl.from(".gp-demo",{
@@ -378,18 +393,20 @@ const targetEl = document.querySelector('.content');
             y: "-10%"
         },"<+=0.01")
 
-        // 各セクションタイトル　animation
-        .to(".js-span span", {
-            opacity: 1,
-            duration: 2,
-            stagger: 0.07,
+        // const titleFades = document.querySelectorAll('.js-span');
+        // titleFades.forEach(( titleFade ) => {
+        //     gsap.to( titleFade.querySelectorAll( 'span' ), {
+        //             opacity: 1,
+        //             duration: 2,
+        //             stagger: 0.07,
+        //             scrollTrigger: {
+        //                 trigger:  titleFade,
+        //                 start: 'top center',
+        //                 markers: true
+        //             }
+        //         });
+        // })
 
-            // ScrollTriggerとforEachを混ぜればいいのか？？
-            // scrollTrigger: {
-            //     trigger:  ".js-span",
-            //     start: 'top center',
-            // }
-        });
 });
 // -----------------------------------
 // ＊＊＊＊＊＊
