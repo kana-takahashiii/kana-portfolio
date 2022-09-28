@@ -228,8 +228,7 @@ if(home) {
     // スムーススクロール記述 ↑↑
     smoothHomeAnchor();
     
-
-    // gsap 各セクション　scrollTrigger　↓↓
+    //各セクションタイトルと要素がふわっと同時に浮き上がる　↓↓
     const items = document.querySelectorAll('.js-trigger');
     const titleFades = document.querySelectorAll('.js-span');
         items.forEach((item) => {
@@ -246,9 +245,7 @@ if(home) {
                 }
                 }
             );
-
         gsap.set(".js-span span",{opacity: 0,});
-
         titleFades.forEach(( titleFade ) => {
             gsap.to( titleFade.querySelectorAll( 'span' ), {
                     opacity: 1,
@@ -262,11 +259,73 @@ if(home) {
                 });
         })
     });
-    // gsap 各セクション　scrollTrigger　記述　↑↑
+    // -----------------------------------
+    //　kvのアニメーション　　gsap span anime
+    // -----------------------------------
+    gsap.set(".parapara-top",{opacity: 0,});
+    gsap.set(".js-kv-spn span",{opacity: 0,});
+    gsap.set(".js-kv-spn2 span", {opacity: 0,});
+    gsap.set(".cir-sd",{opacity: 0,});
+    gsap.set(".header-nav-pc", {opacity: 0,});
+
+    const targetEl = document.querySelector('.content');
+        targetEl.addEventListener('animationend',() => {
+
+        var kv = gsap.timeline();
+            // "kana takahashi"
+            kv.to(".js-kv-spn span",{
+                opacity: 1,
+                duration: 3,
+                stagger: 0.07,
+            })
+
+            // "hi!~~"
+            .to(".js-kv-spn2 span",{
+                opacity:1,
+                duration: 3,
+                stagger: 0.03,
+            }, "<+=0.01")
+
+            // svg img
+            .to(".cir-sd",{
+                opacity:1,
+                duration: 1,
+                ease: "power4.inOut",
+                y: "-20%",
+            },"<+=2")
+
+            // parapara img
+            .to(".parapara-top",{
+                opacity:1,
+                duration: 1,
+                ease: "power4.inOut",
+                y: "-10%"
+            },"<")
+
+            //header-nav
+            .to(".header-nav-pc",{
+                opacity:1,
+                duration: 1,
+            },"<+=2")
+
+    });
+    // -----------------------------------
+    // ＊＊＊＊＊＊
+    // -----------------------------------
+
+
+
+
+
+
+
+
+
+    //各セクションタイトルと要素がふわっと同時に浮き上がる　↑↑
     
-    // about
+    // about-page　のみ
     } else if(about) {
-        // gsap about ふわっと現れる記述　↓↓
+        // ふわっと現れる記述　↓↓
         const tl = gsap.timeline();
         tl.from(".gp-demo",{
                 opacity:0,
@@ -289,9 +348,9 @@ if(home) {
             
             
 
-    // works
+    // works-pageのみ
     } else if(works) {
-        // gsap works スクロール×ふわっと現れる記述　↓↓
+        // スクロール×ふわっと現れる記述　↓↓
         const animes = gsap.utils.toArray('.js-demo');
         animes.forEach((anime) => {
             gsap.from(anime,
@@ -307,10 +366,10 @@ if(home) {
                 }
                 );
             });
-        // gsap works スクロール×ふわっと現れる記述　↑↑
+        //　スクロール×ふわっと現れる記述　↑↑
 
 
-        // gsap works img×スクロール×ふわっと現れる記述　↓↓
+        //img×スクロール×ふわっと現れる記述　↓↓
         gsap.from(".js-demo-img",{
             opacity: 0,
             y: "30%",
@@ -322,7 +381,7 @@ if(home) {
                 start: 'top center'
             }
         })
-        // gsap works img×スクロール×ふわっと現れる記述　↑↑
+        //img×スクロール×ふわっと現れる記述　↑↑
 
 };
 // -----------------------------------
@@ -335,56 +394,52 @@ if(home) {
 // -----------------------------------
 //　kvのアニメーション　　gsap span anime
 // -----------------------------------
-gsap.set(".parapara-top",{opacity: 0,});
-gsap.set(".js-kv-spn span",{opacity: 0,});
-gsap.set(".js-kv-spn2 span", {opacity: 0,});
-gsap.set(".cir-sd",{opacity: 0,});
-gsap.set(".header-nav-pc", {opacity: 0,});
+// gsap.set(".parapara-top",{opacity: 0,});
+// gsap.set(".js-kv-spn span",{opacity: 0,});
+// gsap.set(".js-kv-spn2 span", {opacity: 0,});
+// gsap.set(".cir-sd",{opacity: 0,});
+// gsap.set(".top .header-nav-pc", {opacity: 0,});
 
-// gsap.set(".js-span span",
-//     {
-//         opacity: 0,
-//     }
-//     );
-const targetEl = document.querySelector('.content');
-    targetEl.addEventListener('animationend',() => {
-    var kv = gsap.timeline();
-        // "kana takahashi"
-        kv.to(".js-kv-spn span",{
-            opacity: 1,
-            duration: 3,
-            stagger: 0.07,
-        })
+// const targetEl = document.querySelector('.content');
+//     targetEl.addEventListener('animationend',() => {
+//     var kv = gsap.timeline();
+//         // "kana takahashi"
+//         kv.to(".js-kv-spn span",{
+//             opacity: 1,
+//             duration: 3,
+//             stagger: 0.07,
+//         })
 
-        // "hi!~~"
-        .to(".js-kv-spn2 span",{
-            opacity:1,
-            duration: 3,
-            stagger: 0.03,
-        }, "<+=0.01")
+//         // "hi!~~"
+//         .to(".js-kv-spn2 span",{
+//             opacity:1,
+//             duration: 3,
+//             stagger: 0.03,
+//         }, "<+=0.01")
 
-        // svg img
-        .to(".cir-sd",{
-            opacity:1,
-            duration: 1,
-            ease: "power4.inOut",
-            y: "-20%",
-        },"<+=2")
+//         // svg img
+//         .to(".cir-sd",{
+//             opacity:1,
+//             duration: 1,
+//             ease: "power4.inOut",
+//             y: "-20%",
+//         },"<+=2")
 
-        // parapara img
-        .to(".parapara-top",{
-            opacity:1,
-            duration: 1,
-            ease: "power4.inOut",
-            y: "-10%"
-        },"<")
+//         // parapara img
+//         .to(".parapara-top",{
+//             opacity:1,
+//             duration: 1,
+//             ease: "power4.inOut",
+//             y: "-10%"
+//         },"<")
 
-        .to(".header-nav-pc",{
-            opacity:1,
-            duration: 1,
-        },"<+=2")
+//         //header-nav
+//         .to(".top .header-nav-pc",{
+//             opacity:1,
+//             duration: 1,
+//         },"<+=2")
 
-});
+// });
 // -----------------------------------
 // ＊＊＊＊＊＊
 // -----------------------------------
