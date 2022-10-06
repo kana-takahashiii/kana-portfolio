@@ -1,10 +1,3 @@
-// import { gsap } from 'gsap';
-// import { ScrollTrigger } from 'gsap/ScrollTrigger';
-// import { CustomEase } from 'gsap/CustomEase';
-
-// gsap.registerPlugin(ScrollTrigger);
-
-
 // ------------
 // TOP>works-swiper
 // ------------ 
@@ -156,46 +149,46 @@ window.addEventListener('resize',function(){
 // -----------------------
 class SpanWrap {
     constructor(target) {
-  
-      this.target = this.convertElement(target);
-      this.nodes = [...this.target.childNodes];
-  
-      this.convert();
+
+    this.target = this.convertElement(target);
+    this.nodes = [...this.target.childNodes];
+
+    this.convert();
+}
+
+convert() {
+
+    let spanWrapText = ""
+
+    this.nodes.forEach((node) => {
+    if (node.nodeType == 3) { //テキストの場合
+        const text = node.textContent.replace(/\r?\n/g, '');//テキストから改行コード削除
+    //spanで囲んで連結
+    spanWrapText = spanWrapText + text.split('').reduce((acc, v) => {
+    return acc + `<span>${v}</span>`
+        }, "");
+    } else {  //テキスト以外
+        //<br>などテキスト以外の要素をそのまま連結
+        spanWrapText = spanWrapText + node.outerHTML
     }
-  
-    convert() {
-  
-      let spanWrapText = ""
-  
-      this.nodes.forEach((node) => {
-        if (node.nodeType == 3) { //テキストの場合
-          const text = node.textContent.replace(/\r?\n/g, '');//テキストから改行コード削除
-          //spanで囲んで連結
-          spanWrapText = spanWrapText + text.split('').reduce((acc, v) => {
-            return acc + `<span>${v}</span>`
-          }, "");
-        } else {  //テキスト以外
-          //<br>などテキスト以外の要素をそのまま連結
-          spanWrapText = spanWrapText + node.outerHTML
-        }
-      })
-      this.target.innerHTML = spanWrapText
+    })
+    this.target.innerHTML = spanWrapText
+}
+//jQueryオブジェクトや文字列セレクターを変換
+convertElement(element) {
+    if (element instanceof HTMLElement) {
+        return element
     }
-    //jQueryオブジェクトや文字列セレクターを変換
-    convertElement(element) {
-        if (element instanceof HTMLElement) {
-          return element
-        }
-        // if (element instanceof jQuery) {
-        //   return element[0]
-        // }
-        return document.querySelector(element);
-      }
+    // if (element instanceof jQuery) {
+    //   return element[0]
+    // }
+    return document.querySelector(element);
+    }
 }
 //実行処理
 const targets = [...document.querySelectorAll(".js-span,.js-kv-spn,.js-kv-spn2")]
 targets.forEach( (target) => {
-  new SpanWrap(target);
+    new SpanWrap(target);
 })
 
 
@@ -380,58 +373,4 @@ if(home) {
 // -----------------------------------
 
 
-
-// if文へ移行
-// -----------------------------------
-//　kvのアニメーション　　gsap span anime
-// -----------------------------------
-// gsap.set(".parapara-top",{opacity: 0,});
-// gsap.set(".js-kv-spn span",{opacity: 0,});
-// gsap.set(".js-kv-spn2 span", {opacity: 0,});
-// gsap.set(".cir-sd",{opacity: 0,});
-// gsap.set(".top .header-nav-pc", {opacity: 0,});
-
-// const targetEl = document.querySelector('.content');
-//     targetEl.addEventListener('animationend',() => {
-//     var kv = gsap.timeline();
-//         // "kana takahashi"
-//         kv.to(".js-kv-spn span",{
-//             opacity: 1,
-//             duration: 3,
-//             stagger: 0.07,
-//         })
-
-//         // "hi!~~"
-//         .to(".js-kv-spn2 span",{
-//             opacity:1,
-//             duration: 3,
-//             stagger: 0.03,
-//         }, "<+=0.01")
-
-//         // svg img
-//         .to(".cir-sd",{
-//             opacity:1,
-//             duration: 1,
-//             ease: "power4.inOut",
-//             y: "-20%",
-//         },"<+=2")
-
-//         // parapara img
-//         .to(".parapara-top",{
-//             opacity:1,
-//             duration: 1,
-//             ease: "power4.inOut",
-//             y: "-10%"
-//         },"<")
-
-//         //header-nav
-//         .to(".top .header-nav-pc",{
-//             opacity:1,
-//             duration: 1,
-//         },"<+=2")
-
-// });
-// -----------------------------------
-// ＊＊＊＊＊＊
-// -----------------------------------
 
